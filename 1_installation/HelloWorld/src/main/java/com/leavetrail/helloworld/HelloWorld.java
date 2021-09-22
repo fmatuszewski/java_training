@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  * Adding some changes to feature_1 branch.
+ * Dowolne komentarze
  */
+
 package com.leavetrail.helloworld;
+
 
 /**
  *
@@ -14,7 +17,14 @@ public class HelloWorld {
     
     public static void main(String args[]){
         
+
         System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        
     }
     
 }

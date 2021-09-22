@@ -24,7 +24,7 @@ git init
 ## Pobieranie kodu
 
 ```
-git checkout
+git clone <url>
 ```
 
 ## Repozytoria zdalne i lokalne
@@ -157,10 +157,16 @@ git branch -D hotfix_branch
 
 
 
-https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=The%20overall%20flow%20of%20Gitflow,branch%20is%20created%20from%20main&text=When%20a%20feature%20is%20complete%20it%20is%20merged%20into%20the,branch%20is%20created%20from%20main
+
 
 
 
 ## Rewizja Kodu.
 
 ## Merge Request
+
+
+Materiały dodatkowe
+(Lekcja 1)[https://www.youtube.com/watch?v=bYlzOy0ipSQ]
+(Lekcja 2)[https://www.youtube.com/watch?v=NPb23pamIVg]
+(Tutorial)[https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=The%20overall%20flow%20of%20Gitflow,branch%20is%20created%20from%20main&text=When%20a%20feature%20is%20complete%20it%20is%20merged%20into%20the,branch%20is%20created%20from%20main]
