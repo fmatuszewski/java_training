@@ -34,7 +34,7 @@ public class ObjectOriented {
         System.out.println(student.name);
         student.printParameters();
         
-        
+//        Tutaj tworzymy nowe obiekty klasy Book i Poem wykorzystując ich konstruktory.
         Book book = new Book("Pan Tadeusz","Adam Mickiewicz","","Powieść");
         Poem poem = new Poem("Pan Tadeusz","Adam Mickiewicz","Wiersz");
         
@@ -44,7 +44,9 @@ public class ObjectOriented {
         
         Book book2;
         
-        
+//        Tutaj przykład polimorfizmu.
+//        Klasy Book i Poem które dziedziczą po klasie Literature
+//        mogą być przechowywane w zmiennych typu Literature.
         Literature[] literature = new Literature[2];
         literature[0] = book;
         literature[1] = poem;
