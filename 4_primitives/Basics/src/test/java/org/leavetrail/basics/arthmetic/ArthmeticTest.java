@@ -5,6 +5,7 @@
  */
 package org.leavetrail.basics.arthmetic;
 
+import com.leavetrail.basics.Start;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.lang.Math;
 
 /**
  *
@@ -99,6 +99,8 @@ public class ArthmeticTest {
         double z = 10.1d;
         float r = 10.2f;
         System.out.format("%d, %f, %f", x,y,z);
+        
+        Start.policzpoletrojkata();
       
     }
     

@@ -6,6 +6,8 @@
 
 package com.leavetrail.basics;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -28,7 +30,18 @@ public class Start {
         float S,R1;
         float T1 ;
         
+        String line;
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Type something: "); 
+        line = in.nextLine(); 
+        System.out.println("You said: " + line);
+
         
+        System.out.print("Type something else: "); 
+        line = in.nextLine();
+        System.out.println("You also said: " + line);
+
 
         T1 = petlaWhileIf(4f,2f,2);
         
@@ -144,5 +157,9 @@ public class Start {
          }
          return T1;
      }
+
+    public static void policzpoletrojkata() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
