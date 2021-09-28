@@ -18,7 +18,14 @@ public class Poem extends Literature{
         super.author = author;
         this.style = style;
     }
-    
+//    Tutaj przykład przeciążania metod
+//    Klasa nadrzędna Literature ma zdefiniowaną metodę toString 
+//    Metoda ta jest automatycznie dziedziczona.
+//    Jeżeli zdefniniujemy metodę o tej samej nazwie tutaj.
+//    metoda ta zasłoni poprzednią implementację i fakt ten
+//    nazywamy przeciążeniem metody.
+//    Przeciążone metody zazwyczj powinniśmy oznaczać annotacją @Override
+    @Override
     public String toString(){
         String s = "Insntance of Poem\n"+
                   "Title: %s\n"
