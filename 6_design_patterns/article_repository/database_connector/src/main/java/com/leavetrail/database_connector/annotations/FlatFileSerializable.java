@@ -19,4 +19,5 @@ import java.lang.annotation.Target;
 public @interface FlatFileSerializable {
    public String connection() default ""; 
    public String schema() default "";
+   public String sequence() ;
 }

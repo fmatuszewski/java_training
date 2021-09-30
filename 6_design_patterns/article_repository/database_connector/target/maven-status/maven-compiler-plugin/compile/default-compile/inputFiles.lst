@@ -5,3 +5,4 @@
 /Volumes/Magazine SSHD/Projects/JavaTraining/java_training/6_design_patterns/article_repository/database_connector/src/main/java/com/leavetrail/database_connector/serializer/property/PropertiesSerializable.java
 /Volumes/Magazine SSHD/Projects/JavaTraining/java_training/6_design_patterns/article_repository/database_connector/src/main/java/com/leavetrail/database_connector/annotations/FlatFileElement.java
 /Volumes/Magazine SSHD/Projects/JavaTraining/java_training/6_design_patterns/article_repository/database_connector/src/main/java/com/leavetrail/database_connector/serializer/property/PropertySerializer.java
+/Volumes/Magazine SSHD/Projects/JavaTraining/java_training/6_design_patterns/article_repository/database_connector/src/main/java/com/leavetrail/database_connector/serializer/property/PropertySerializerException.java

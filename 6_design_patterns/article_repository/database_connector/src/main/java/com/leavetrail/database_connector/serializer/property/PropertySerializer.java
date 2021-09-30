@@ -5,13 +5,22 @@
  */
 package com.leavetrail.database_connector.serializer.property;
 
+import com.leavetrail.database_connector.annotations.FlatFileElement;
+import com.leavetrail.database_connector.annotations.FlatFileSerializable;
+import com.leavetrail.database_connector.domain.Article;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -20,6 +29,18 @@ import java.util.Set;
 public class PropertySerializer {
     
    PropertiesSerializable serializable; 
+   String sequence;
+
+    PropertySerializer(Class clazz) throws PropertySerializerException {
+            if (!clazz.isAnnotationPresent(FlatFileSerializable.class)) {
+           throw new PropertySerializerException("The class " 
+             + clazz.getSimpleName() 
+             + " is not annotated with JsonSerializable");
+       }
+        FlatFileSerializable a = (FlatFileSerializable) 
+                clazz.getAnnotation(FlatFileSerializable.class);
+        sequence = a.sequence();
+    }
    
    
    
@@ -141,5 +162,53 @@ public class PropertySerializer {
 
     }
 
+    Article parse(String line) throws IllegalArgumentException, IllegalAccessException {
+        
+        Article article = new Article();
+        Class<?> clazz = article.getClass();
+        
+        Map<String, Field> jsonElementsMap = new HashMap<>();
+            for (Field field : clazz.getDeclaredFields()) {
+                field.setAccessible(true);
+                if (field.isAnnotationPresent(FlatFileElement.class)) {
+                    jsonElementsMap.put(getKey(field), field);
+                }
+            }
+        String[] values = line.split(";");
+        int i = 0;
+        
+        for(String key:sequence.split(",")){
+            jsonElementsMap.get(key).set(article,values[i++]);
+        }
+        return article;
+    }
+
+    String format(Article expectedArticle) throws IllegalArgumentException, IllegalAccessException {
+        
+          Class<?> clazz = expectedArticle.getClass();
+            Map<String, String> jsonElementsMap = new HashMap<>();
+            for (Field field : clazz.getDeclaredFields()) {
+                field.setAccessible(true);
+                if (field.isAnnotationPresent(FlatFileElement.class)) {
+                    jsonElementsMap.put(getKey(field), (String) field.get(expectedArticle));
+                }
+            }
+            
+            return
+            Arrays.stream(sequence.split(","))
+                    .map(entry -> jsonElementsMap.get(entry))
+                    .collect(Collectors.joining(";"));
+
+    }
+    
+     private String getKey(Field field) {
+        String value = field.getAnnotation(FlatFileElement.class)
+                .key();
+            return value.isEmpty() ? field.getName() : value;
+        }
+
+    void serialize(Article expectedArticle, ByteArrayOutputStream out) {
+        
+    }
     
 }

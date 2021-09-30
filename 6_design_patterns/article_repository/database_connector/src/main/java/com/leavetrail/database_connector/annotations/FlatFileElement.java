@@ -13,6 +13,6 @@ import java.lang.annotation.Target;
 @Retention(RUNTIME)
 @Target({ FIELD })
 public @interface FlatFileElement {
-    public int sequence();
+    public String key() default "";
    
 }

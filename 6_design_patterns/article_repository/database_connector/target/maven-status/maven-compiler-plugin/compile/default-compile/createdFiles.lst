@@ -1,4 +1,5 @@
 com/leavetrail/database_connector/annotations/FlatFileElement.class
+com/leavetrail/database_connector/serializer/property/PropertySerializerException.class
 com/leavetrail/database_connector/serializer/property/PropertiesSerializable.class
 com/leavetrail/database_connector/annotations/FlatFileSerializable.class
 com/leavetrail/database_connector/configuration/Configuration.class
